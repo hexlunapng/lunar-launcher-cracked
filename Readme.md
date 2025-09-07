@@ -1,1 +1,14 @@
 # nothing sus so farr
+
+apis lunar launcher hits 
+
+https://api.backend-services-lunar.xyz which sends {
+  "status": "ok",
+  "uptime": 53599.157617746
+}
+
+
+and
+https://api.backend-services-lunar.xyz/h = 404
+
+
