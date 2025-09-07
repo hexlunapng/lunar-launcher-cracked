@@ -1,0 +1,31 @@
+{
+  "name": "lunar_launcher",
+  "version": "1.0.0",
+  "description": "Lunar Launcher",
+  "main": "main.js",
+  "assetUrls": {
+    "LuxorNewLogoV1.ico": "",
+    "LuxorNewLogoV1.png": "",
+    "logo.png": "",
+    "logo-large.png": "",
+    "vbucks-icon.png": "assets/vbucks-icon.png",
+    "hype.png": "",
+    "level-icon.png": "",
+    "crown-icon.png": "",
+    "user-avatar.png": "",
+    "news-banner.jpg": "",
+    "treasure-hunt.jpg": "",
+    "background.jpg": "",
+    "login-bg.jpg": "",
+    "season9-bg.jpg": "",
+    "featured-bg.jpg": ""
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "ntsuspend": "^1.0.2",
+    "s": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron": "^38.0.0"
+  }
+}

@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-loading="true" class="app-loading">
+   
+    <div class="floating-background">
+        <div class="floating-circle circle-1"></div>
+        <div class="floating-circle circle-2"></div>
+        <div class="floating-circle circle-3"></div>
+        <div class="floating-circle circle-4"></div>
+        <div class="floating-circle circle-5"></div>
+        <div class="floating-circle circle-6"></div>
+        <div class="floating-circle circle-7"></div>
+        <div class="floating-circle circle-8"></div>
+        <div class="floating-circle circle-9"></div>
+        <div class="floating-circle circle-10"></div>
+    </div>
+
+   
+    <div id="loginScreen" class="login-screen">
+      
+        <div class="title-bar">
+            <div class="title-left">
+                <div class="logo">
+                    <img src="Assets/LuxorNewLogoV1.ico" alt="Lunar Logo" class="logo-image">
+                </div>
+                <span class="app-name">Lunar 1.0</span>
+            </div>
+            <div class="title-controls">
+                <button class="control-btn minimize" id="loginMinimizeApp">−</button>
+                <button class="control-btn close" id="loginCloseApp">×</button>
+            </div>
+        </div>
+        
+
+        <div class="login-background">
+            <div class="animated-particles">
+                <div class="geometric-shape shape-1"></div>
+                <div class="geometric-shape shape-2"></div>
+                <div class="geometric-shape shape-3"></div>
+                <div class="geometric-shape shape-4"></div>
+                <div class="geometric-shape shape-5"></div>
+                <div class="geometric-shape shape-6"></div>
+                <div class="geometric-shape shape-7"></div>
+                <div class="geometric-shape shape-8"></div>
+                <div class="geometric-shape shape-9"></div>
+                <div class="geometric-shape shape-10"></div>
+                <div class="geometric-shape shape-11"></div>
+                <div class="geometric-shape shape-12"></div>
+                <div class="geometric-shape shape-13"></div>
+                <div class="geometric-shape shape-14"></div>
+                <div class="geometric-shape shape-15"></div>
+                <div class="geometric-shape shape-16"></div>
+                <div class="geometric-shape shape-17"></div>
+                <div class="geometric-shape shape-18"></div>
+                <div class="geometric-shape shape-19"></div>
+                <div class="geometric-shape shape-20"></div>
+            </div>
+        </div>
+
+        <div class="login-modal">
+            <div class="login-header">
+                <h1 class="login-title">Lunar</h1>
+                <h2 class="login-subtitle">Discord Authentication Required !</h2>
+                <p class="login-description">Please authenticate through Discord on our website first, then return to the launcher to continue.</p>
+            </div>
+            
+            <div class="discord-login-container">
+                <div class="discord-status" id="discordStatus">
+                    <div class="discord-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                    </div>
+                    <div class="discord-message">
+                        <h3>Waiting for Discord Authentication</h3>
+                        <p>Please complete the login process</p>
+                    </div>
+                </div>
+                
+                <div class="discord-actions">
+                    <button class="discord-help-btn" id="discordHelpBtn">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/>
+                        </svg>
+                        Need Help?
+                    </button>
+                    <button class="website-btn" id="websiteBtn">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div id="verificationScreen" class="verification-screen hidden">
+        
+        <div class="title-bar">
+            <div class="title-left">
+                <div class="logo">
+                    <img src="Assets/LuxorNewLogoV1.ico" alt="Luxor Logo" class="logo-image">
+                </div>
+                <span class="app-name">Lunar 1.0</span>
+            </div>
+            <div class="title-controls">
+                <button class="control-btn minimize" id="verificationMinimizeApp">−</button>
+                <button class="control-btn close" id="verificationCloseApp">×</button>
+            </div>
+        </div>
+
+      
+        <div class="login-background">
+            <div class="animated-particles">
+                <div class="geometric-shape shape-1"></div>
+                <div class="geometric-shape shape-2"></div>
+                <div class="geometric-shape shape-3"></div>
+                <div class="geometric-shape shape-4"></div>
+                <div class="geometric-shape shape-5"></div>
+                <div class="geometric-shape shape-6"></div>
+                <div class="geometric-shape shape-7"></div>
+                <div class="geometric-shape shape-8"></div>
+                <div class="geometric-shape shape-9"></div>
+                <div class="geometric-shape shape-10"></div>
+                <div class="geometric-shape shape-11"></div>
+                <div class="geometric-shape shape-12"></div>
+                <div class="geometric-shape shape-13"></div>
+                <div class="geometric-shape shape-14"></div>
+                <div class="geometric-shape shape-15"></div>
+                <div class="geometric-shape shape-16"></div>
+                <div class="geometric-shape shape-17"></div>
+                <div class="geometric-shape shape-18"></div>
+                <div class="geometric-shape shape-19"></div>
+                <div class="geometric-shape shape-20"></div>
+            </div>
+        </div>
+
+        <div class="verification-modal">
+            
+            <div id="verificationStep1" class="verification-step active">
+                <div class="verification-header">
+                    <div class="step-indicator">
+                        <div class="step-number">1</div>
+                        <div class="step-line"></div>
+                        <div class="step-number inactive">2</div>
+                    </div>
+                    <h1 class="verification-title">Verifying Your Account</h1>
+                    <p class="verification-description">Please wait while we verify your Discord authentication...</p>
+                </div>
+                
+                <div class="verification-content">
+                    <div class="verification-spinner">
+                        <div class="spinner-ring"></div>
+                        <div class="spinner-ring"></div>
+                        <div class="spinner-ring"></div>
+                    </div>
+                    <div class="verification-status" id="verificationStatus">
+                        <p>Connecting to authentication server...</p>
+                    </div>
+                </div>
+            </div>
+
+           >
+            <div id="verificationStep2" class="verification-step">
+                <div class="verification-header">
+                    <div class="step-indicator">
+                        <div class="step-number completed">✓</div>
+                        <div class="step-line completed"></div>
+                        <div class="step-number active">2</div>
+                    </div>
+                    <h1 class="verification-title">Welcome Back!</h1>
+                    <p class="verification-description">Would you like to login as this user?</p>
+                </div>
+                
+                <div class="verification-content">
+                    <div class="user-preview" id="userPreview">
+                        <div class="user-avatar-preview">
+                            <img id="userAvatarPreview" src="Assets/user-avatar.png" alt="User Avatar">
+                            <div class="discord-badge">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="user-info-preview">
+                            <h3 id="userNamePreview">Loading...</h3>
+                            <p id="userDiscordPreview">Discord User</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verification-actions">
+                        <button class="verification-btn secondary" id="cancelLoginBtn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+                            </svg>
+                            Cancel
+                        </button>
+                        <button class="verification-btn primary" id="confirmLoginBtn">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                            </svg>
+                            Continue
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div id="mainLauncher" class="main-launcher hidden fade-in">
+     
+      
+        <div class="title-bar">
+            <div class="title-left">
+                <div class="logo">
+                    <img src="Assets/LuxorNewLogoV1.ico" alt="Axos Logo" class="logo-image">
+                </div>
+                <span class="app-name">Lunar 1.0</span>
+            </div>
+            <div class="title-controls">
+                <button class="control-btn minimize" id="minimizeApp">−</button>
+                <button class="control-btn close" id="closeApp">×</button>
+            </div>
+        </div>
+      
+        <div class="main-content">
+       
+            <div class="sidebar">
+                <nav class="navigation">
+                    <button class="nav-item active" data-tab="home" id="homeNavBtn">
+                        <div class="nav-icon-container">
+                            <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                            </svg>
+                        </div>
+                        <span>Home</span>
+                        <div class="nav-indicator"></div>
+                    </button>
+                    <button class="nav-item" data-tab="library" id="libraryNavBtn">
+                        <div class="nav-icon-container">
+                            <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z" />
+                            </svg>
+                        </div>
+                        <span>Library</span>
+                        <div class="nav-indicator"></div>
+                    </button>
+                    <button class="nav-item" data-tab="itemshop" id="itemshopNavBtn">
+                        <div class="nav-icon-container">
+                            <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                            </svg>
+                        </div>
+                        <span>Item Shop</span>
+                        <div class="nav-indicator"></div>
+                    </button>
+                    <button class="nav-item" data-tab="leaderboard" id="leaderboardNavBtn">
+                        <div class="nav-icon-container">
+                            <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" />
+                            </svg>
+                        </div>
+                        <span>Leaderboard</span>
+                        <div class="nav-indicator"></div>
+                    </button>
+                    <button class="nav-item" data-tab="servers" id="serversNavBtn">
+                        <div class="nav-icon-container">
+                            <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1zm0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z" />
+                            </svg>
+                        </div>
+                        <span>Servers</span>
+                        <div class="nav-indicator"></div>
+                    </button>
+                </nav>
+                <div class="sidebar-middle">
+                    <div class="help-card">
+                        <div class="help-background-animation"></div>
+                        <div class="help-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
+                            </svg>
+                        </div>
+                        <div class="help-content">
+                            <h4>Need Help?</h4>
+                            <p>Having issues with the launcher?</p>
+                            <button class="help-btn" id="helpBtn">Get Support</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-bottom">
+                    <button class="nav-item" data-tab="settings" id="settingsNavBtn">
+                        <div class="nav-icon-container">
+                            <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" />
+                            </svg>
+                        </div>
+                        <span>Settings</span>
+                        <div class="nav-indicator"></div>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="content-area">
+              
+                <div id="homeTab" class="tab-content active">
+                   
+                    <div class="user-profile-enhanced">
+                        <div class="profile-background">
+                            <div class="profile-gradient"></div>
+                            <div class="profile-particles"></div>
+                        </div>
+                        <div class="profile-content">
+                            <div class="user-avatar-section">
+                                <div class="user-avatar-large">
+                                    <img src="Assets/user-avatar.png" alt="User Avatar">
+                                    <div class="status-indicator"></div>
+                                </div>
+                                <div class="user-info-enhanced">
+                                    <h2>Welcome back, <span id="userName">User</span></h2>
+                                    <p class="user-subtitle">Welcome to Lunar ! Hope you enjoy while playing with us</p>
+                                    <div class="user-badges">
+                                        <span class="badge verified">Online</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-card vbucks">
+                                    <div class="stat-icon">
+                                        <img src="Assets/vbucks-icon.png" alt="V-Bucks">
+                                    </div>
+                                    <div class="stat-info">
+                                        <div class="stat-label">V-Bucks</div>
+                                        <div class="stat-value" id="vbucksDisplay">N/A</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card level">
+                                    <div class="stat-icon">
+                                        <img src="Assets/level-icon.png" alt="Level">
+                                    </div>
+                                    <div class="stat-info">
+                                        <div class="stat-label">Level</div>
+                                        <div class="stat-value" id="levelDisplay">1</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card wins">
+                                    <div class="stat-icon">
+                                        <img src="Assets/hype.png" alt="Hype">
+                                    </div>
+                                    <div class="stat-info">
+                                        <div class="stat-label">Hype</div>
+                                        <div class="stat-value" id="hypeDisplay">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-section-enhanced">
+                        <div class="section-header-enhanced">
+                            <h3>Latest Updates</h3>
+                            <div class="header-line"></div>
+                        </div>
+                        <div class="news-cards-enhanced">
+                            <div class="news-card-enhanced featured" id="newsCard">
+                                <div class="news-image">
+                                    <img src="Assets/fortnite-loading-screen-season-9.webp" alt="News Image">
+                                    <div class="news-overlay">
+                                        <div class="news-badge">Latest</div>
+                                    </div>
+                                    <div class="news-hover-effect"></div>
+                                </div>
+                                <div class="news-content-enhanced">
+                                    <h4>Lunar Release</h4>
+                                    <p>Experience Season 15 with enhanced features, V-Bucks rewards, and 24/7 servers</p>
+                                    <div class="news-meta">
+                                        <span class="news-date">August 10, 2025</span>
+                                        <span class="read-time">1 min read</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="game-section-enhanced">
+                        <div class="section-header-enhanced">
+                            <h3>Featured Content</h3>
+                            <div class="header-line"></div>
+                        </div>
+                        <div class="game-cards-enhanced">
+                            <div class="game-card-enhanced primary" id="season9Card">
+                                <div class="card-background">
+                                    <img src="Assets/R.jpg" alt="Season 9">
+                                    <div class="card-particles"></div>
+                                </div>
+                                <div class="card-overlay-enhanced">
+                                    <div class="card-badge">New</div>
+                                    <div class="card-content-enhanced">
+                                        <h3>Season 15</h3>
+                                        <p>The Future Is Yours !</p>
+                                        <button class="card-action-btn" id="exploreBtn">Explore Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card-enhanced secondary">
+                                <div class="card-background">
+                                    <img src="Assets/Fortnite_patch-notes_v9-00_br-header-v9-00_09BR_POIs_Social_1-(1)-1920x1080-56c7316f7a1918b59f1cb8441572e7e235a49529.jpg" alt="Treasure Hunt">
+                                    <div class="card-particles"></div>
+                                </div>
+                                <div class="card-overlay-enhanced">
+                                    <div class="card-content-enhanced">
+                                        <h3>Beta Access</h3>
+                                        <p>Highlight the futuristic, reconstructive, and epic-battle vibes of Season 15</p>
+                                        <div class="card-footer-enhanced">
+                                            <span class="season-text">Season 15 Content</span>
+                                            <button class="download-btn-enhanced" id="downloadFortniteBtn">Download</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+                <div id="libraryTab" class="tab-content">
+                    <div class="library-header-enhanced">
+                        <div class="library-title-section">
+                            <h1>Game Library</h1>
+                            <p>Manage your Fortnite builds and installations</p>
+                        </div>
+                        <div class="library-actions-enhanced">
+                            <button id="importBtn" class="add-build-btn-enhanced">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                                </svg>
+                                <span id="importText">Add Build</span>
+                                <div id="importSpinner" class="spinner hidden"></div>
+                            </button>
+                            <button class="download-btn-enhanced" id="downloadClientBtn">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" />
+                                </svg>
+                                Download Season
+                            </button>
+                        </div>
+                    </div>
+                    <div id="libraryContent" class="library-content-enhanced">
+                        <div id="libraryEmpty" class="library-empty-enhanced">
+                            <div class="empty-state-enhanced">
+                                <div class="empty-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                                    </svg>
+                                </div>
+                                <h3>No builds found</h3>
+                                <p>Import your Fortnite builds to get started with Lunar</p>
+                            </div>
+                        </div>
+                        <div id="libraryGames" class="library-games-enhanced hidden">
+                            
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="itemshopTab" class="tab-content">
+                    <div class="itemshop-header-enhanced">
+                        <div class="itemshop-title-section">
+                            <h1>Item Shop</h1>
+                            <p>Today's featured cosmetics from the Fortnite Item Shop</p>
+                        </div>
+                        <div class="itemshop-actions-enhanced">
+                            <button id="refreshShopBtn" class="refresh-shop-btn-enhanced">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.65,6.35C16.2,4.9 14.21,4 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C15.73,20 18.84,17.45 19.73,14H17.65C16.83,16.33 14.61,18 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6C13.66,6 15.14,6.69 16.22,7.78L13,11H20V4L17.65,6.35Z" />
+                                </svg>
+                                <span id="refreshText">Refresh Shop</span>
+                                <div id="refreshSpinner" class="spinner hidden"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="itemshopContent" class="itemshop-content-enhanced">
+                        <div id="itemshopLoading" class="itemshop-loading-enhanced">
+                            <div class="loading-spinner-large"></div>
+                            <p>Loading Item Shop...</p>
+                        </div>
+                        <div id="itemshopError" class="itemshop-error-enhanced hidden">
+                            <div class="error-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                </svg>
+                            </div>
+                            <h3>Failed to load Item Shop</h3>
+                            <p id="itemshopErrorMessage">Please try again later</p>
+                            <button class="retry-btn-enhanced" id="retryItemShopBtn">Retry</button>
+                        </div>
+                        <div id="itemshopItems" class="itemshop-items-enhanced hidden">
+                            <div class="shop-sections">
+                                <div class="shop-section featured-section">
+                                    <div class="section-header">
+                                        <h3>Featured</h3>
+                                    </div>
+                                    <div id="featuredItems" class="shop-items-grid-feature">
+                                        <!-- Les items seront générés ici via JS -->
+                                    </div>
+                                </div>
+                                <div class="shop-section daily-section">
+                                    <div class="section-header">
+                                        <h3>Daily</h3>
+                                    </div>
+                                    <div id="dailyItems" class="shop-items-grid-daily">
+                                        <!-- Les items seront générés ici via JS -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-disclaimer">
+                                <p>Note: These items are cosmetic only and grant no competitive advantage.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Leaderboard Tab -->
+                <div id="leaderboardTab" class="tab-content">
+                    <div class="leaderboard-header-enhanced">
+                        <div class="leaderboard-title-section">
+                            <h1>Arena Leaderboard</h1>
+                            <p>Top players ranked by Hype points and performance</p>
+                        </div>
+                        <div class="leaderboard-actions-enhanced">
+                            <button id="refreshLeaderboardBtn" class="refresh-leaderboard-btn-enhanced">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.65,6.35C16.2,4.9 14.21,4 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C15.73,20 18.84,17.45 19.73,14H17.65C16.83,16.33 14.61,18 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6C13.66,6 15.14,6.69 16.22,7.78L13,11H20V4L17.65,6.35Z" />
+                                </svg>
+                                <span id="refreshLeaderboardText">Refresh</span>
+                                <div id="refreshLeaderboardSpinner" class="spinner hidden"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="leaderboardContent" class="leaderboard-content-enhanced">
+                        <div id="leaderboardLoading" class="leaderboard-loading-enhanced">
+                            <div class="loading-spinner-large"></div>
+                            <p>Loading Leaderboard...</p>
+                        </div>
+                        <div id="leaderboardError" class="leaderboard-error-enhanced hidden">
+                            <div class="error-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" />
+                                </svg>
+                            </div>
+                            <h3>Failed to load Leaderboard</h3>
+                            <p id="leaderboardErrorMessage">Please try again later</p>
+                            <button class="retry-btn-enhanced" id="retryLeaderboardBtn">Retry</button>
+                        </div>
+                        <div id="leaderboardData" class="leaderboard-data-enhanced hidden">
+                            <div class="leaderboard-info">
+                                <p>Each win is 60 Hype, each elimination is 20 Hype</p>
+                            </div>
+                            <div class="leaderboard-table-container">
+                                <div class="leaderboard-table-header">
+                                    <div class="rank-header">#</div>
+                                    <div class="player-header">Player</div>
+                                    <div class="wins-header">
+                                        <svg class="stat-icon-small" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M5,16L3,5H1V3H4L6,14H18.5L19.5,11H7.5L8.5,9H21L19,16H5Z" />
+                                        </svg>
+                                        Wins
+                                    </div>
+                                    <div class="eliminations-header">
+                                        <svg class="stat-icon-small" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M14.5,9L12,11.5L9.5,9L8,10.5L10.5,13L8,15.5L9.5,17L12,14.5L14.5,17L16,15.5L13.5,13L16,10.5L14.5,9Z" />
+                                        </svg>
+                                        Eliminations
+                                    </div>
+                                    <div class="hype-header">
+                                        <svg class="stat-icon-small" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M16,6L2.29,19.71L3.71,21.13L17.41,7.41L17.41,16H19.41L19.41,4H7.41V6H16Z" />
+                                        </svg>
+                                        Hype
+                                    </div>
+                                </div>
+                                <div id="leaderboardList" class="leaderboard-list">
+                                    <!-- Leaderboard entries will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Servers Tab -->
+                <div id="serversTab" class="tab-content">
+                    <div class="serversTab-header-enhanced">
+                        <div class="serversTab-title-section">
+                            <h1>Servers</h1>
+                            <p>You can see the servers that are currently running or have finished.</p>
+                        </div>
+                        <div class="serversTab-actions-enhanced">
+                            <button id="refreshServerBtn" class="refresh-server-btn-enhanced">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.65,6.35C16.2,4.9 14.21,4 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20C15.73,20 18.84,17.45 19.73,14H17.65C16.83,16.33 14.61,18 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6C13.66,6 15.14,6.69 16.22,7.78L13,11H20V4L17.65,6.35Z" />
+                                </svg>
+                                <span id="refreshServerText">Refresh</span>
+                                <div id="refreshServerSpinner" class="spinner hidden"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="serversTab-content-enhanced">
+                        <div class="server-item">
+                            <!-- <div class="server-item-header">
+                                <div>
+                                    <span class="server-status-dot"></span>
+                                    <span class="server-status">WAITING</span>
+                                    <span class="server-name"> • LATE GAME ARENA</span>
+                                </div>
+                                <span class="server-count">0/35</span>
+                            </div>
+                            <div class="server-details">
+                                EU-SERVER • 1283t6DSHJQ-12354-2145-QKQC8B
+                            </div>
+                            <div class="server-progress"></div> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Settings Tab -->
+                <div id="settingsTab" class="tab-content">
+                    <div class="settings-container-enhanced">
+                        <div class="settings-header-enhanced">
+                            <h1>Settings</h1>
+                            <div class="settings-tabs-enhanced">
+                                <button class="settings-tab-enhanced active" data-tab="general" id="generalSettingsTab">
+                                    <svg class="tab-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.34 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
+                                    </svg>
+                                    General
+                                </button>
+                                <button class="settings-tab-enhanced" data-tab="about" id="aboutSettingsTab">
+                                    <svg class="tab-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                                    </svg>
+                                    About
+                                </button>
+                            </div>
+                        </div>
+                        <div class="settings-content-enhanced">
+                            <div id="generalSettings" class="settings-panel-enhanced active">
+                                <div class="user-section-enhanced">
+                                    <div class="user-avatar-settings">
+                                        <img src="Assets/user-avatar.png" alt="User Avatar">
+                                    </div>
+                                    <div class="user-details-enhanced">
+                                        <h3 id="settingsUserName">User</h3>
+                                        <p>Lunar Member</p>
+                                        <button class="logout-btn-enhanced" id="logoutBtn">
+                                            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M16,17V14H9V10H16V7L21,12L16,17M14,2A2,2 0 0,1 16,4V6H14V4H5V20H14V18H16V20A2,2 0 0,1 14,22H5A2,2 0 0,1 3,20V4A2,2 0 0,1 5,2H14Z" />
+                                            </svg>
+                                            Sign Out
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="settings-section-enhanced">
+                                    <h4>Launcher Updates</h4>
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <span>Check for launcher updates</span>
+                                            <p>Automatically check for new versions</p>
+                                        </div>
+                                        <button class="check-updates-btn-enhanced" id="checkUpdatesBtn">
+                                            Check Now
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="settings-section-enhanced">
+                                    <h4>Game Settings</h4>
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <span>Auto-download updates</span>
+                                            <p>Automatically download game updates</p>
+                                        </div>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="autoUpdate" checked>
+                                            <label for="autoUpdate"></label>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <div class="setting-info">
+                                            <span>Launch in fullscreen</span>
+                                            <p>Start games in fullscreen mode</p>
+                                        </div>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="fullscreen">
+                                            <label for="fullscreen"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="aboutSettings" class="settings-panel-enhanced">
+                                <div class="about-content-enhanced">
+                                    <div class="about-logo">
+                                        <img src="Assets/LuxorNewLogoV1.ico" alt="Luxor Logo">
+                                    </div>
+                                    <h3>Lunar Launcher</h3>
+                                    <p class="version">Version 1.0</p>
+                                    <p class="description">The ultimate OGFN experience.</p>
+                                    <div class="about-stats">
+                                        <div class="stat">
+                                            <span class="stat-number">20+</span>
+                                            <span class="stat-label">Active Players</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-number">99.9%</span>
+                                            <span class="stat-label">Uptime</span>
+                                        </div>
+                                        <div class="stat">
+                                            <span class="stat-number">24/7</span>
+                                            <span class="stat-label">Support</span>
+                                        </div>
+                                    </div>
+                                    <div class="about-footer">
+                                        <p>&copy; 2025 Lunar Team. All rights reserved.</p>
+                                        <p>made with ❤️ by @karaa & @kxfv</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="newsModal" class="modal-overlay hidden">
+        <div class="modal-backdrop" id="newsModalBackdrop"></div>
+        <div class="news-modal-enhanced">
+            <div class="news-modal-header-enhanced">
+                <button class="modal-close-enhanced" id="newsModalClose">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="news-modal-content-enhanced">
+                <div class="news-header-enhanced">
+                    <div class="news-badge-large-enhanced">Latest Update</div>
+                    <h1>Lunar Release</h1>
+                    <div class="news-meta-enhanced">
+                        <span class="news-date-large">August 10, 2025</span>
+                        <span class="news-author">By Lunar Team</span>
+                    </div>
+                </div>
+                <div class="news-body-enhanced">
+                    <div class="news-section-item-enhanced">
+                        <h3>Welcome to Lunar</h3>
+                        <p>Servers are now online 24/7 ! Content Update #1 has been released with Arena, V-Bucks rewards on kills and wins, Team GameModes and a fully functional item shop.</p>
+                    </div>
+                    <div class="news-section-item-enhanced">
+                        <h3>Competitive Arena</h3>
+                        <p>Arena mode is now available for competitive players seeking ranked gameplay and skill-based matchmaking.</p>
+                    </div>
+                    <div class="news-section-item-enhanced">
+                        <h3>Enhanced Server Infrastructure</h3>
+                        <p>We have upgraded our EU servers to provide optimal performance for competitive gameplay with reduced latency and improved stability.</p>
+                    </div>
+                    <div class="news-footer-enhanced">
+                        <div class="news-tags-enhanced">
+                            <span class="news-tag-enhanced">Competitive</span>
+                            <span class="news-tag-enhanced">Update</span>
+                            <span class="news-tag-enhanced">Servers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <span id="toastMessage"></span>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
